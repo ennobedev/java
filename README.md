@@ -24,7 +24,7 @@ public class Ejercicio2 {
 }
 ```
 
-public static void main(String[] args)
+`public static void main(String[] args)`
 Es el punto de entrada del programa. El código dentro de este método es lo primero que se ejecutará.
 
 ```Java
@@ -34,48 +34,47 @@ public static void main(String[] args) {
 ```
 ## 2. Variables y Tipos de Datos
 Las variables son contenedores para guardar información. Cada una tiene un tipo de dato específico.
-int: Para números enteros.
+`int`: Para números enteros.
 ```java
 int numero_usuario = 0;
 ```
-float: Para números decimales (precisión simple). Se debe añadir una f al final del número.
+`float`: Para números decimales (precisión simple). Se debe añadir una f al final del número.
 
 ```Java
 float precioManzana = 1.5f;
 ```
-double: Para números decimales con mayor precisión.
+`double`: Para números decimales con mayor precisión.
 
 ```Java
-double lectura_inicial = 1.0;
+double lectura_inicial = 1.0d;
 ```
-char: Para un único carácter. Se usan comillas simples ' '.
+`char`: Para un único carácter. Se usan comillas simples ' '.
 
 ```Java
 char fidelizado = 'S';
 ```
-boolean: Para valores de verdadero (true) o falso (false).
+`boolean`: Para valores de verdadero (true) o falso (false).
 
 ```Java
 boolean programa_terminado = false;
 ```
 ## 3. Leer Datos del Teclado (Clase Scanner)
 Para que el programa sea interactivo, se utiliza la clase Scanner.
-Crear el Scanner: Se instancia una sola vez, normalmente al principio del main.
+Crear el `Scanner`: Se instancia una sola vez, normalmente al principio del `main`.
 
 ```Java
 Scanner teclado = new Scanner(System.in);
 ```
 Leer datos: Se usa el método correspondiente al tipo de dato esperado.
-`teclado.nextInt(); (para int)`
-`teclado.nextDouble(); (para double)`
-`teclado.nextLine().charAt(0); (para char)`
-Cerrar el Scanner: Al final del programa, es una buena práctica liberar los recursos.
+`teclado.nextInt();` (para `int`)
+`teclado.nextDouble();` (para `double`)
+`teclado.nextLine().charAt(0);` (para `char`)
+Cerrar el `Scanner`: Al final del programa, es una buena práctica liberar los recursos.
 
 ```Java
 teclado.close();
 ```
-Limpiar el buffer: Después de leer un número (nextInt(), nextDouble(), etc.), si se va a leer texto o un char, es necesario consumir el salto de línea residual.
-code
+Limpiar el buffer: Después de leer un número (`nextInt()`, `nextDouble()`, etc.), si se va a leer texto o un `char`, es necesario consumir el salto de línea residual.
 ```Java
 int opcionUsuario = teclado.nextInt();
 teclado.nextLine(); // Limpia el buffer
@@ -84,14 +83,17 @@ char fidelizado = teclado.nextLine().charAt(0);
 
 ## 4. Condicionales (Tomar Decisiones)
 Permiten ejecutar diferentes bloques de código según si se cumple una condición.
-if: Ejecuta el código si la condición es verdadera.
-code
+
+### Estructuras Condicionales (`if`, `else if`, `else`)
+
+`if`: Ejecuta el código si la condición es verdadera.
+
 ```Java
 if (numero > max) {
     max = numero;
 }
 ```
-if-else: Ejecuta el bloque if si la condición es verdadera; si no, ejecuta el bloque else.
+`if-else`: Ejecuta el bloque if si la condición es verdadera; si no, ejecuta el bloque else.
 
 ```Java
 if (numero % 2 == 0) {
@@ -100,7 +102,7 @@ if (numero % 2 == 0) {
     numero = numero * 3 + 1;
 }
 ```
-if-else if-else: Encadena múltiples condiciones. Se ejecuta solo el primer bloque cuya condición sea verdadera.
+`if-else if-else`: Encadena múltiples condiciones. Se ejecuta solo el primer bloque cuya condición sea verdadera.
 
 ```Java
 if (tipoEmpleado == 1) {
@@ -111,12 +113,30 @@ if (tipoEmpleado == 1) {
     sueldoBase = 1700;
 }
 ```
-Operadores Lógicos: Para combinar condiciones.
+### Operadores Lógicos: Para combinar condiciones.
+
 `&&` (Y Lógico): Ambas condiciones deben ser verdaderas.
+
 `||` (O Lógico): Al menos una de las condiciones debe ser verdadera.
+
+### El Operador de Módulo (`%`)
+
+Calcula el resto de una división entera.
+Ejemplos:
+10 % 3 devuelve 1 (porque 10 dividido entre 3 es 3, con un resto de 1).
+8 % 2 devuelve 0 (porque 8 es divisible exactamente entre 2).
+```java
+// Si el resto de dividir entre 2 es 0, el número es par.
+if (numero % 2 == 0) {
+    System.out.println("El número es par.");
+} else {
+    System.out.println("El número es impar.");
+}
+```
+
 ## 5. Bucles (Repetir Tareas)
 Ejecutan un bloque de código varias veces.
-Bucle while
+### Bucle `while`
 Se repite mientras la condición sea verdadera. Ideal cuando no se sabe el número exacto de iteraciones.
 Menú de opciones (control por centinela):
 
@@ -133,7 +153,7 @@ while (numero <= 0) {
     numero = teclado.nextInt();
 }
 ```
-Bucle for
+### Bucle `for`
 Se usa cuando se conoce el número exacto de iteraciones.
 
 ```Java
